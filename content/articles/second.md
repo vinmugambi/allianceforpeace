@@ -1,5 +1,5 @@
 ---
-title: My first blog post
+title: My second blog post
 description: Learning how to use @nuxt/content to create a blog
 img: first.jpg
 alt: my first blog post

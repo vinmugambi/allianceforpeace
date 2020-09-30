@@ -1,10 +1,10 @@
 ---
-title: My first blog post
+title: My third blog post
 description: Learning how to use @nuxt/content to create a blog
 img: first.jpg
 alt: my first blog post
 author:
- name: Vincent Mugambi
+ name: VincentMugambi
  bio: All about the author
  image: https://avatars3.githubusercontent.com/u/22234350?s=460&u=fb0be975e825f93c0ece41b9327d71254cf35492&v=4
 ---
