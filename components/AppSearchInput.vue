@@ -1,7 +1,7 @@
 <template>
   <div>
     <input
-      v-model="searchQuery"
+      v-model="query"
       type="search"
       autocomplete="off"
       placeholder="Search Articles"
@@ -13,28 +13,33 @@
         </NuxtLink>
       </li>
     </ul>
+    {{ query }}
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        searchQuery: '',
-        articles: []
+export default {
+  data() {
+    return {
+      query: "",
+      articles: [],
+    };
+  },
+
+  watch: {
+    async query(query) {
+      if (!query) {
+        this.articles = [];
+        return;
       }
+
+      this.articles = await this.$content("articles")
+        .only(["title", "slug"])
+        .sortBy("createdAt", "asc")
+        .limit(12)
+        .search(query)
+        .fetch();
     },
-    watch: {
-      async searchQuery(searchQuery) {
-        if (!searchQuery) {
-          this.articles = []
-          return
-        }
-        this.articles = await this.$content('articles')
-          .limit(6)
-          .search(searchQuery)
-          .fetch()
-      }
-    }
-  }
+  },
+};
 </script>
