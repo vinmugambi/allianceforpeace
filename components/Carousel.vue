@@ -6,7 +6,7 @@
       :src="images[0]"
     />
     <div v-else class="flex flex-col">
-      <div class="w-full md:w-3/4 overflow-hidden relative">
+      <div class="w-full overflow-hidden relative">
         <img
           class="h-96 md:h-120 w-full object-cover rounded"
           :src="images[currentImageIndex]"

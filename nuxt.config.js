@@ -10,7 +10,8 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.jpg" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.jpg" }],
+    link: [{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" }]
   },
   static: {
     prefix: false

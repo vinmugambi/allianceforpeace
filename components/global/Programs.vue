@@ -5,12 +5,12 @@
         :to="{ name: 'programs-slug', params: { slug: program.slug } }"
         class="block relative rounded overflow-hidden preview"
       >
-        <img class="w-full h-24 object-cover" :src="program.images[0]" />
+        <img class="w-full h-32 object-cover" :src="program.images[0]" />
         <div class="absolute cover inset-0 z-10 bg-black bg-opacity-25 hover:bg-opacity-50"></div>
 
-        <p class="absolute top-0 left-0 z-20 px-2 text-white font-bold">
+        <h4 class="absolute top-0 left-0 z-20 px-2 text-white">
           {{ program.title }}
-        </p>
+        </h4>
       </nuxt-link>
     </li>
   </ul>
