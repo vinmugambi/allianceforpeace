@@ -1,0 +1,34 @@
+{
+  "activities": [
+    {
+      "title": "Zero rated loans",
+      "icon": "/what-we-do/zero-rated-loans.svg",
+      "description": "Advance business loans and grants to refugees and other underprivileged groups"
+    },
+    {
+      "title": "Relocation",
+      "icon": "/what-we-do/relocation.svg",
+      "description": "Relocate and resettle refugees to peaceful and welcoming countries"
+    },
+    {
+      "title": "Refugee training",
+      "icon": "/what-we-do/refugee-training.svg",
+      "description": "Equip interested groups with farming skills to promote sustainable agriculture"
+    },
+    {
+      "title": "Community integration",
+      "icon": "/what-we-do/community-integration.svg",
+      "description": "Integrate refugees and help them settle into new lives within their wider communities"
+    },
+    {
+      "title": "Job search",
+      "icon": "/what-we-do/job-search.svg",
+      "description": "Secure jobs for beneficiaries in a safe and friendly environment"
+    },
+    {
+      "title": "Goverment grants",
+      "icon": "/what-we-do/government-grants.svg",
+      "description": "Assist minority groups to apply and secure goverment loans and grants"
+    }
+  ]
+}

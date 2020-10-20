@@ -10,7 +10,10 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.jpg" }]
+  },
+  static: {
+    prefix: false
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -29,7 +32,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@nuxtjs/svg", "@nuxt/http"],
 
   content: {
     liveEdit: false,
