@@ -1,16 +1,11 @@
 <template>
   <div>
-    <header class="flex" style="background: rgba(0, 0, 0, 0.08)">
-      <div>
-        <img :src="mainImage.location" class="h-64 w-full object-cover" />
-      </div>
-      <div>
-        <img
-          v-for="image in images"
-          :key="image.location"
-          :src="image.location"
-          class="h-32 w-full object-cover"
-        />
+    <header>
+      <h1 class="max-w-xl py-4 font-bold">{{ home.description }}</h1>
+      <div id="gallery">
+        <home-carousel :images="images" />
+
+        <nuxt-link class="list" to="gallery">see all media</nuxt-link>
       </div>
     </header>
     <nuxt-content :document="home" />
@@ -23,14 +18,17 @@ export default {
     const home = await $content("home").fetch();
     const gallery = await $content("gallery").fetch();
 
-    const mainImage = gallery.images[0];
-    const images = gallery.images.filter((image, index) => index !== 0);
-
     return {
       home,
-      mainImage,
-      images,
+      images: gallery.images,
     };
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+#gallery {
+  /* top: 16rem; */
+}
+</style>
+

@@ -2,7 +2,6 @@
   <div>
     <back to="programs" label="Back to all programs"/>
     <carousel v-if="program.images" :images="program.images"/>
-    <!-- <pre>{{program}}</pre> -->
     <h1>{{ program.title}}</h1>
     <p v-if="program.description">{{ program.description }}</p>
     <article class="py-4">
@@ -15,7 +14,7 @@
 <script>
 export default {
   async asyncData({ $content, params, error }) {
-    const program = await $content("programs", params.slug).fetch().catch(err=> error(404, "The page you are lloking for is miising"));
+    const program = await $content("programs", params.slug).fetch().catch(err=> error(404, "The page you are looking for is miising"));
 
     const [prev, next] = await $content("programs")
       .only(["title", "slug"])

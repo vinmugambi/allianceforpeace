@@ -67,7 +67,7 @@ export default {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.23);
 }
 .card {
-  min-height: 18rem;
+  min-height: 16rem;
   background: rgba(0, 0, 0, 0.07);
 }
 .card-content {

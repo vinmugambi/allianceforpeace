@@ -1,7 +1,12 @@
 {
   "images": [
-    { "title": "", "location": "/gallery/aid.jpg" },
-    { "title": "", "location": "/gallery/aid-1.jpg" },
-    { "title": "", "location": "/gallery/aid-2.jpg" }
+    { "title": "", "location": "/gallery/images/aid.jpg" },
+    { "title": "", "location": "/gallery/images/aid-1.jpg" },
+    { "title": "", "location": "/gallery/images/aid-2.jpg" }
+  ],
+  "videos": [
+    { "title": "","host": "local", "location": "/gallery/videos/aid.jpg" },
+    { "title": "", "host": "youtube", "location": "https://youtu.be/Jt51QmnQ8hE" },
+    { "title": "", "host": "youtube","location": "https://youtu.be/PajKCEvPCXg" }
   ]
 }

@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex space-x-4">
+  <ul class="flex space-x-4 py-4">
     <li v-for="program in programs" :key="program.title" class="flex-1">
       <nuxt-link
         :to="{ name: 'programs-slug', params: { slug: program.slug } }"

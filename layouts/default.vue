@@ -25,6 +25,12 @@ h2 {
   @apply text-3xl;
 }
 
+section h2 {
+  @apply font-bold;
+}
+section,header{
+  @apply pb-16;
+}
 h3 {
    @apply text-2xl;
 }
@@ -33,8 +39,8 @@ h4, li h3{
   @apply text-xl;
 }
 
-ul + p a {
-  @apply text-blue-600;
+ul + p a, a.list {
+  @apply text-blue-600 font-bold;
   display: inline-block;
   padding-right: 1.4rem;
   background-image: url(/icons/chev-right.svg);
@@ -44,7 +50,7 @@ ul + p a {
   text-transform: uppercase;
 }
 
-ul + p a:hover {
+ul + p a:hover, a.list:hover {
   padding-right: 1.6rem;
 }
 
