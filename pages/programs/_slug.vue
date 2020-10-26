@@ -1,10 +1,10 @@
 <template>
   <div>
-    <back to="programs" label="Back to all programs"/>
+    <back to="programs" class="mb-2" label="Back to all programs"/>
     <carousel v-if="program.images" :images="program.images"/>
     <h1>{{ program.title}}</h1>
     <p v-if="program.description">{{ program.description }}</p>
-    <article class="py-4">
+    <article class="pt-4 pb-16">
       <nuxt-content :document="program" />
     </article>
     <prev-next :prev="prev" :next="next" />
@@ -14,7 +14,7 @@
 <script>
 export default {
   async asyncData({ $content, params, error }) {
-    const program = await $content("programs", params.slug).fetch().catch(err=> error(404, "The page you are looking for is miising"));
+    const program = await $content("programs", params.slug).fetch().catch(err=> error(404));
 
     const [prev, next] = await $content("programs")
       .only(["title", "slug"])

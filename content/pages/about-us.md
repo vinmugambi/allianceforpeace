@@ -8,7 +8,7 @@ It empowers war-torn communities by helping to reduce poverty and social margina
 
 Alliance for Peace has a primary goal to help grass roots communities (children and families) overcome poverty and social injustice. Supporting our cause helps to reduce global inequality and bring greater freedom and justice to the people who need it most.
 
-## Our Objectives
+## Our objectives
 To partner with existing resettlement services to assist Africans to resettle in Australia and to maintain their sense of cultural identity.
 To provide the means to empower Women towards self-sufficiency in Congo, Rwanda and Burundi.
 To support education programs in the Great Lakes region of Africa and East African Region as well.

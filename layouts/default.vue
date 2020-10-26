@@ -10,7 +10,9 @@
 h1,
 h2,
 h3,
-h4,a {
+h4,
+a,
+nav {
   font-family: "Ubuntu", serif;
   /* @apply font-bold; */
 }
@@ -22,24 +24,27 @@ h1 + p {
 }
 
 h2 {
-  @apply text-3xl;
+  @apply text-2xl mt-4;
 }
 
 section h2 {
-  @apply font-bold;
+  @apply font-bold text-3xl;
 }
-section,header{
-  @apply pb-16;
+section,
+header {
+  @apply pb-8;
 }
 h3 {
-   @apply text-2xl;
+  @apply text-2xl;
 }
 
-h4, li h3{
+h4,
+li h3 {
   @apply text-xl;
 }
 
-ul + p a, a.list {
+ul + p a,
+a.list {
   @apply text-blue-600 font-bold;
   display: inline-block;
   padding-right: 1.4rem;
@@ -50,11 +55,24 @@ ul + p a, a.list {
   text-transform: uppercase;
 }
 
-ul + p a:hover, a.list:hover {
+ul + p a:hover,
+a.list:hover {
   padding-right: 1.6rem;
 }
 
 .rounded-xs {
   border-radius: 2px;
+}
+
+table {
+  margin-left: -1rem;
+}
+
+th {
+  text-align: left;
+}
+th,
+td {
+  padding-left: 1rem;
 }
 </style>
