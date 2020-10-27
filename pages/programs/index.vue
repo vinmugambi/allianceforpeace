@@ -24,9 +24,9 @@
           />
           <div
             class="p-2"
-            :class="{ 'absolute left-0 card-content': !program.images }"
+            :class="{ 'absolute left-0 w-full card-content': !program.images }"
           >
-            <h2>{{ program.title }}</h2>
+            <h2 class="mt-0 text-center">{{ program.title }}</h2>
           </div>
         </nuxt-link>
       </li>

@@ -1,5 +1,6 @@
 ---
 title: About us 
+name: about
 ---
 
 Alliance for Peace is a non-profit and nongovernmental organisation that holds an approved deductible gift recipient charity status (DGR). It was created in 2010 and is based in Newcastle, NSW.

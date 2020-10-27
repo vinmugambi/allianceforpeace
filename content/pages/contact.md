@@ -1,5 +1,6 @@
 ---
 title: Contact us
+name: contact
 ---
 
 ## Office

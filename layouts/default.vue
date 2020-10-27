@@ -1,12 +1,24 @@
 <template>
-  <div>
-    <div class="max-w-4xl mx-auto">
+  <div class="relative">
+    <div id="bg" class="absolute"></div>
+    <navbar />
+    <div class="max-w-4xl pt-8 mx-auto">
       <Nuxt />
     </div>
   </div>
 </template>
 
 <style lang="postcss">
+:root{
+  --primary:  #07a6de;
+}
+#bg {
+  height: 40vh;
+  /* border-bottom-right-radius: 30%; */
+  width: 100vw;
+  background: rgba(0,0,0,.1);
+  z-index: -1;
+}
 h1,
 h2,
 h3,
@@ -58,6 +70,10 @@ a.list {
 ul + p a:hover,
 a.list:hover {
   padding-right: 1.6rem;
+}
+
+p {
+  @apply max-w-2xl;
 }
 
 .rounded-xs {

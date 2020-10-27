@@ -1,7 +1,7 @@
 <template>
 <div class="w-2/3">
 
-  <ul class="flex flex-wrap -mx-2">
+  <ul class="flex flex-wrap ml-4">
     <li v-for="activity in activities" :key="activity.title" class="w-1/2 px-2 py-4">
       <div class="flex space-x-2">
         <img class="w-6 h-6" :src="activity.icon" />

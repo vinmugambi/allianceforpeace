@@ -1,5 +1,6 @@
 ---
 title: Donate
+name: donate
 description: Join us in rebuilding the lives of the vulnerable
 ---
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1 class="max-w-xl py-4 font-bold">{{ home.description }}</h1>
+      <h1 class="max-w-xl pb-4 mx-auto text-center font-bold ">{{ home.description }}</h1>
       <div id="gallery">
         <home-carousel :images="images" />
 
@@ -26,9 +26,4 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
-#gallery {
-  /* top: 16rem; */
-}
-</style>
 

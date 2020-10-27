@@ -12,18 +12,18 @@
         </li>
       </ul>
     </nav>
-    <div v-if="activeTabIndex === 0" id="images" class="flex space-x-6 py-4">
-      <div class="flex-1 flex-column space-y-6">
+    <div v-if="activeTabIndex === 0" id="images" class="flex space-x-2 py-4">
+      <div class="flex-1 flex-column space-y-2">
         <img
-          class="block rounded"
+          class="block "
           v-for="image in firstCol"
           :key="image.location"
           :src="image.location"
         />
       </div>
-      <div class="flex-1 space-y-6">
+      <div class="flex-1 space-y-2">
         <img
-          class="block rounded"
+          class="block "
           v-for="image in secondCol"
           :key="image.location"
           :src="image.location"
@@ -31,7 +31,7 @@
       </div>
       <!-- <div class="flex-1 space-y-4">
         <img
-          class="block rounded"
+          class="block "
           v-for="image in thirdCol"
           :key="image.location"
           :src="image.location"
@@ -41,7 +41,7 @@
     <div v-if="activeTabIndex === 1" class="py-4" id="videos">
       <div class="pb-4" v-for="video in videos" :key="video.location">
         <iframe
-          class="rounded"
+          class=""
           width="560"
           height="315"
           :src="video.location"

@@ -61,6 +61,12 @@ export default {
     };
   },
 
+  mounted() {
+    setTimeout(() => {
+      this.next();
+    }, 2000);
+  },
+
   methods: {
     next() {
       if (this.currentImageIndex < this.images.length - 1) {
