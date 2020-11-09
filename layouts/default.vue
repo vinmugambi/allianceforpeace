@@ -1,23 +1,26 @@
 <template>
-  <div class="relative">
-    <div id="bg" class="absolute"></div>
-    <navbar />
-    <div class="max-w-4xl pt-8 mx-auto">
-      <Nuxt />
-    </div>
+  <div>
+    <navbar class="navbar" />
+    <Nuxt />
+    <footer class="mt-8 flex justify-center items-center h-12">
+      <p class="text-sm">© Global Alliance for Peace 2020</p>
+    </footer>
   </div>
 </template>
 
 <style lang="postcss">
-:root{
-  --primary:  #07a6de;
+:root {
+  --primary: #07a6de;
 }
-#bg {
-  height: 40vh;
-  /* border-bottom-right-radius: 30%; */
-  width: 100vw;
-  background: rgba(0,0,0,.1);
-  z-index: -1;
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
+.navbar {
+  background: rgba(0, 0, 0, 0.01);
+}
+footer {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,.6);
 }
 h1,
 h2,
@@ -36,11 +39,21 @@ h1 + p {
 }
 
 h2 {
-  @apply text-2xl mt-4;
+  @apply text-2xl;
 }
 
 section h2 {
-  @apply font-bold text-3xl;
+  @apply font-bold text-5xl;
+}
+.page h2 {
+  @apply pb-2;
+}
+.page h2:not(:first-child) {
+  @apply pt-6;
+}
+.page p,
+.page h2 {
+  @apply max-w-xl;
 }
 section,
 header {
@@ -70,6 +83,7 @@ a.list {
 ul + p a:hover,
 a.list:hover {
   padding-right: 1.6rem;
+  text-decoration: underline;
 }
 
 p {

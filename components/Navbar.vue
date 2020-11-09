@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <nav class="flex justify-between max-w-4xl items-center mx-auto">
+    <nav class="flex justify-between container items-center">
       <nuxt-link to="/">
         <img src="/logo.png" alt="G.A.P" class="block h-16" />
       </nuxt-link>

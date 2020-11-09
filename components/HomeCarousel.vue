@@ -2,7 +2,7 @@
   <div class="pb-4">
     <img
       v-if="images.length === 1"
-      class="h-108 w-full object-cover rounded"
+      class="h-108 w-full object-cover rounded-sm"
       :src="images[0].location"
     />
     <div v-else class="flex flex-col">

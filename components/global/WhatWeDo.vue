@@ -1,18 +1,23 @@
 <template>
-<div class="w-2/3">
-
-  <ul class="flex flex-wrap ml-4">
-    <li v-for="activity in activities" :key="activity.title" class="w-1/2 px-2 py-4">
-      <div class="flex space-x-2">
-        <img class="w-6 h-6" :src="activity.icon" />
+  <section id="what-we-do">
+    <div class="title">
+      <h2>What we do</h2>
+      <p>
+        We have developed community programs aimed at helping the most
+        vulnerable to rebuild and strengthen their lives
+      </p>
+    </div>
+    <div v-for="activity in activities" class="activity" :key="activity.title">
+      <div class="pb-1 space-y-1">
+        <img class="block w-8 h-8" :src="activity.icon" />
         <h3>
           {{ activity.title }}
         </h3>
       </div>
-      <p>{{activity.description}}</p>
-    </li>
-  </ul>
-</div>
+
+      <p>{{ activity.description }}</p>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -31,3 +36,35 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss">
+#what-we-do {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+#what-we-do h3 {
+  @apply text-lg;
+}
+
+#what-we-do h2 + p {
+  @apply text-gray-900;
+}
+#what-we-do .activity:nth-child(2n) {
+  transform: translateY(5.5rem);
+}
+#home-content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 1vw;
+  width: 96vw;
+  height: 80%;
+  background: rgba(0, 0, 0, 0.01);
+  z-index: -3;
+  border-top-left-radius: 50% 4%;
+  border-top-right-radius: 50% 4%;
+}
+</style>

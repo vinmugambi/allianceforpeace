@@ -1,21 +1,47 @@
 <template>
   <div>
-    <back to="index" label="To home" />
-    <h1>Gallery</h1>
-    <nav class="mt-4">
-      <ul class="flex mx-auto">
-        <li tabindex="1" class="tab-item" :class="activeTabIndex===0?'border-b-2 border-blue-600': ''" v-on:click="setActiveTab(0)">
-          images
-        </li>
-        <li tabindex="2" class="tab-item" :class="{'border-b-2 border-blue-600': activeTabIndex===1}" v-on:click="setActiveTab(1)">
-          videos
-        </li>
-      </ul>
-    </nav>
-    <div v-if="activeTabIndex === 0" id="images" class="flex space-x-2 py-4">
+    <header class="h-48 header relative pt-4">
+      <div class="container">
+        <back to="index" label="Back to home page" />
+
+        <div class="absolute bottom-0">
+          <h1>Gallery</h1>
+          <nav class="mt-4">
+            <ul class="flex mx-auto">
+              <li
+                tabindex="1"
+                class="tab-item"
+                :class="
+                  activeTabIndex === 0
+                    ? 'border-b-2 border-blue-600'
+                    : 'border-b-2 border-transparent'
+                "
+                v-on:click="setActiveTab(0)"
+              >
+                images
+              </li>
+              <li
+                tabindex="2"
+                class="tab-item"
+                :class="
+                  activeTabIndex === 1
+                    ? 'border-b-2 border-blue-600'
+                    : 'border-b-2 border-transparent'
+                "
+                v-on:click="setActiveTab(1)"
+              >
+                videos
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div v-if="activeTabIndex === 0" id="images" class="container flex space-x-2 py-4">
       <div class="flex-1 flex-column space-y-2">
         <img
-          class="block "
+          class="block"
           v-for="image in firstCol"
           :key="image.location"
           :src="image.location"
@@ -23,22 +49,15 @@
       </div>
       <div class="flex-1 space-y-2">
         <img
-          class="block "
+          class="block"
           v-for="image in secondCol"
           :key="image.location"
           :src="image.location"
         />
       </div>
-      <!-- <div class="flex-1 space-y-4">
-        <img
-          class="block "
-          v-for="image in thirdCol"
-          :key="image.location"
-          :src="image.location"
-        />
-      </div> -->
+    
     </div>
-    <div v-if="activeTabIndex === 1" class="py-4" id="videos">
+    <div v-if="activeTabIndex === 1" class="py-4 container" id="videos">
       <div class="pb-4" v-for="video in videos" :key="video.location">
         <iframe
           class=""
@@ -91,14 +110,22 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .tab-item {
   @apply py-2 px-4 font-bold text-blue-600 cursor-pointer;
 }
 .tab-item:hover {
   background: rgba(0, 0, 0, 0.04);
 }
-nav {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  width: 99vw;
+  height: 12rem;
+  background: rgba(0, 0, 0, 0.01);
+  z-index: -3;
+  border-bottom-right-radius: 8% 40%;
 }
 </style>

@@ -1,14 +1,20 @@
 <template>
   <div>
-    <header>
-      <h1 class="max-w-xl pb-4 mx-auto text-center font-bold ">{{ home.description }}</h1>
-      <div id="gallery">
-        <home-carousel :images="images" />
+    <header id="home" class="relative">
+      <div class="container py-4">
+        <h1 class="max-w-xl pb-4 mx-auto text-center font-bold">
+          {{ home.description }}
+        </h1>
+        <div id="gallery">
+          <home-carousel :images="images" />
 
-        <nuxt-link class="list" to="gallery">see all media</nuxt-link>
+          <nuxt-link class="list" to="gallery">see all media</nuxt-link>
+        </div>
       </div>
     </header>
-    <nuxt-content :document="home" />
+    <div id="home-content" class="relative">
+      <nuxt-content class="container" :document="home" />
+    </div>
   </div>
 </template>
 
@@ -25,5 +31,33 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss">
+#home::after {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.01);
+  /* background: var(--primary); */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 99vw;
+  height: 32rem;
+  border-bottom-left-radius: 50% 4%;
+  border-bottom-right-radius: 50% 4%;
+}
+/* #home::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.05);
+  top: 0;
+  left: 0;
+  z-index: -2;
+  display: block;
+  width: 99vw;
+  height: 80vh;
+} */
+</style>
 
 

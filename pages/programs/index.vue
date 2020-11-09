@@ -1,36 +1,45 @@
 <template>
   <div>
-    <back to="index" label="Back to home page" />
+    <header class="h-48 relative pt-4">
+      <div class="container">
+        <back to="index" label="Back to home page" />
 
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.description }}</p>
-
-    <ul class="flex flex-wrap -mx-2">
-      <li
-        v-for="program in programs"
-        :key="program.slug"
-        class="w-1/3 px-2 py-4"
-      >
-        <nuxt-link
-          :to="`/programs/${program.slug}`"
-          class="block card relative h-full overflow-hidden rounded-xs"
-          title="learn more"
+        <div class="absolute bottom-0 pb-4">
+          <h1>{{ page.title }}</h1>
+          <p>{{ page.description }}</p>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <ul class="flex flex-wrap -mx-2">
+        <li
+          v-for="program in programs"
+          :key="program.slug"
+          class="w-1/3 px-2 py-4"
         >
-          <img
-            v-if="program.images"
-            :src="program.images[0]"
-            :alt="`image of ${program.title}`"
-            class="block w-full h-48 object-cover object-top"
-          />
-          <div
-            class="p-2"
-            :class="{ 'absolute left-0 w-full card-content': !program.images }"
+          <nuxt-link
+            :to="`/programs/${program.slug}`"
+            class="block card relative h-full overflow-hidden rounded-xs"
+            title="learn more"
           >
-            <h2 class="mt-0 text-center">{{ program.title }}</h2>
-          </div>
-        </nuxt-link>
-      </li>
-    </ul>
+            <img
+              v-if="program.images"
+              :src="program.images[0]"
+              :alt="`image of ${program.title}`"
+              class="block w-full h-48 object-cover object-top"
+            />
+            <div
+              class="p-2"
+              :class="{
+                'absolute left-0 w-full card-content': !program.images,
+              }"
+            >
+              <h2 class="mt-0 text-center">{{ program.title }}</h2>
+            </div>
+          </nuxt-link>
+        </li>
+      </ul>
+    </main>
   </div>
 </template>
 
@@ -48,6 +57,20 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+header{
+  border-bottom-right-radius: 10% 30%;
+}
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  width: 99vw;
+  height: 16rem;
+  background: rgba(0, 0, 0, 0.01);
+  z-index: -3;
+  border-bottom-right-radius: 8% 20%;
+}
 .card h2 {
   @apply text-xl;
 }

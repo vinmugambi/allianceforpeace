@@ -1,11 +1,11 @@
 <template>
-  <ul class="flex space-x-4 py-4">
+  <ul class="flex space-x-2 py-4">
     <li v-for="program in programs" :key="program.title" class="flex-1">
       <nuxt-link
         :to="{ name: 'programs-slug', params: { slug: program.slug } }"
-        class="block relative rounded overflow-hidden preview"
+        class="block relative overflow-hidden preview"
       >
-        <img class="w-full h-32 object-cover" :src="program.images[0]" />
+        <img class="w-full h-48 object-cover" :src="program.images[0]" />
         <div class="absolute cover inset-0 z-10 bg-black bg-opacity-25 hover:bg-opacity-50"></div>
 
         <h4 class="absolute top-0 left-0 z-20 px-2 text-white">
