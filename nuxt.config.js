@@ -11,7 +11,7 @@ export default {
       { hid: "description", name: "description", content: "" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/logo.jpg" }],
-    link: [{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" }]
+    link: [{ rel: "stylesheet", href: "//db.onlinewebfonts.com/c/25a4fec4e6e60457b078baa1b365a48f?family=ScalaSans" }],
   },
   static: {
     prefix: false

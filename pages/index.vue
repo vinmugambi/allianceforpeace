@@ -1,8 +1,8 @@
 <template>
   <div>
     <header id="home" class="relative">
-      <div class="container py-4">
-        <h1 class="max-w-xl pb-4 mx-auto text-center font-bold">
+      <div class="container">
+        <h1 class="intro max-w-xl py-12 mx-auto text-center font-bold">
           {{ home.description }}
         </h1>
         <div id="gallery">

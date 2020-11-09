@@ -10,7 +10,7 @@
 
 <style lang="postcss">
 :root {
-  --primary: #07a6de;
+  --primary: #07a6de4e;
 }
 .container {
   @apply max-w-4xl mx-auto px-4;
@@ -28,10 +28,13 @@ h3,
 h4,
 a,
 nav {
-  font-family: "Ubuntu", serif;
+  font-family: "ScalaSans","Ubuntu", serif;
   /* @apply font-bold; */
 }
-h1 {
+h1{
+  @apply text-5xl;
+}
+h1.intro {
   @apply capitalize text-4xl;
 }
 h1 + p {
@@ -55,9 +58,8 @@ section h2 {
 .page h2 {
   @apply max-w-xl;
 }
-section,
-header {
-  @apply pb-8;
+section {
+  @apply pt-16;
 }
 h3 {
   @apply text-2xl;

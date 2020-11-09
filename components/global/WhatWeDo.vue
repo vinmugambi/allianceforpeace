@@ -9,8 +9,8 @@
     </div>
     <div v-for="activity in activities" class="activity" :key="activity.title">
       <div class="pb-1 space-y-1">
-        <img class="block w-8 h-8" :src="activity.icon" />
-        <h3>
+        <img class="relative block rounded-xs icon w-8 h-8" :src="activity.icon" />
+        <h3 class="font-bold">
           {{ activity.title }}
         </h3>
       </div>
@@ -37,7 +37,14 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" >
+img.icon {
+  background: var(--primary);
+}
+img.icon::after {
+  content: "hellko";
+}
+
 #what-we-do {
   position: relative;
   display: grid;
