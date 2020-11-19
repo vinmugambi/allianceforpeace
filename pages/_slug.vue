@@ -22,7 +22,7 @@ export default {
   async asyncData({ $content, params, error }) {
     const page = await $content("pages", params.slug)
       .fetch()
-      .catch((err) => error(404, "The page you are looking for is miising"));
+      .catch((err) => error(404, "The page you are looking for is missing"));
     return { page };
   },
 };

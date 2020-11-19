@@ -1,4 +1,8 @@
 export default {
+  server: {
+    port: 80,
+    host: "localhost"
+  },
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
 
@@ -11,7 +15,16 @@ export default {
       { hid: "description", name: "description", content: "" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/logo.jpg" }],
-    link: [{ rel: "stylesheet", href: "//db.onlinewebfonts.com/c/25a4fec4e6e60457b078baa1b365a48f?family=ScalaSans" }],
+    link: [
+      {
+        rel: "stylesheet",
+        href:
+          "//db.onlinewebfonts.com/c/25a4fec4e6e60457b078baa1b365a48f?family=ScalaSans"
+      }
+    ],
+    script: [
+      { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+    ]
   },
   static: {
     prefix: false

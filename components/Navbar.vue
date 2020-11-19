@@ -44,7 +44,6 @@ export default {
     const indices = [programs, gallery].map((page) => {
       return { title: page.title, name: page.name };
     });
-    console.log(pageList);
     this.navLinks = indices.concat(pageList);
   },
 };
