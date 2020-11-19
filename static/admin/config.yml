@@ -8,7 +8,7 @@ collections:
   - name: programs
     label: Programs
     folder: "content/programs"
-    format: front-matter
+    format: frontmatter
     editor:
       preview: false
     create: true
