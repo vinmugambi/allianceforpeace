@@ -25,13 +25,7 @@ collections:
           format: "YYYY-MM-DD HH:mm",
         }
       - { label: "Program location", name: "location", widget: "string" }
-      - images:
-        name: images
-        widget: list
-        fields:
-          - { label: "Src", name: "location", widget: "string" }
-          - { label: "Alt", name: "alt", widget: "string" }
-          - { label: "caption", name: "caption", widget: "string" }
+      - { label: "Images", name: "images", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: pages
     label: Page
