@@ -7,6 +7,7 @@ public_folder: "/img"
 collections:
   - name: programs
     label: Programs
+    label_singular: Post
     folder: "content/programs"
     format: frontmatter
     editor:
@@ -14,5 +15,33 @@ collections:
     create: true
     fields:
       - { name: title, label: Title }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
+        }
+      - { label: "Program location", name: "location", widget: "string" }
+      - images:
+        name: images
+        widget: list
+        fields:
+          - { label: "Src", name: "location", widget: "string" }
+          - { label: "Alt", name: "alt", widget: "string" }
+          - { label: "caption", name: "caption", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: pages
+    label: Page
+    folder: "content/pages"
+    format: frontmatter
+    editor:
+      preview: false
+    create: false
+    fields:
+      - { name: title, label: Title }
+      - { name: name, label: name }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
