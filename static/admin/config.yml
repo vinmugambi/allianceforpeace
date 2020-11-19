@@ -28,9 +28,11 @@ collections:
       - { label: "Images", name: "images", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: pages
-    label: Page
+    label: Pages
+    label_singular: Page
     folder: "content/pages"
     format: frontmatter
+    delete: false
     editor:
       preview: false
     create: false
@@ -39,3 +41,43 @@ collections:
       - { name: name, label: name }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: settings
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: gallery
+        label: Gallery
+        file: "content/gallery.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: Images
+            name: images
+            widget: list
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: Location, name: "location", widget: "string" }
+          - label: Videos
+            name: videos
+            widget: list
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Host", name: "location", widget: "string" }
+      - name: "what-we-do"
+        label: "What we do"
+        file: "content/what-we-do.json"
+        fields:
+          - label: Activities
+            name: activities
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: Icon, name: icon }
+              - { label: Description, name: description }
+      - name: "programs-list"
+        label: "Programs List"
+        file: "content/programs-list.md"
+        fields:
+          - { name: title, label: Title }
+          - { name: description, label: Description }

@@ -21,7 +21,7 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const home = await $content("home").fetch();
+    const home = await $content("pages","home").fetch();
     const gallery = await $content("gallery").fetch();
 
     return {

@@ -46,7 +46,7 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const page = await $content("programs-index").fetch();
+    const page = await $content("programs-list").fetch();
     const programs = await $content("programs").fetch();
     return {
       page,

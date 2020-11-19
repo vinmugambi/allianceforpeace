@@ -20,6 +20,7 @@
 <script>
 export default {
   async asyncData({ $content, params, error }) {
+    if (params.slug === "programs") return;
     const page = await $content("pages", params.slug)
       .fetch()
       .catch((err) => error(404, "The page you are looking for is missing"));

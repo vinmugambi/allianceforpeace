@@ -1,7 +1,6 @@
 {
   "title": "Gallery",
   "name": "gallery",
-  "icon": "",
   "images": [
     { "title": "", "location": "/gallery/images/aid.jpg" },
     { "title": "", "location": "/gallery/images/aid-1.jpg" },

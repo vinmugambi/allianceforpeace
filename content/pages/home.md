@@ -1,10 +1,7 @@
 ---
-title: Global Alliance for Peace
+title: Home
 name: index
-icon: 
 description: Campaigning for peace and for the rights of Africans refugees affected by war.
-images: 
- -
 ---
 
 <section>
