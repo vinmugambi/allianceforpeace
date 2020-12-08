@@ -36,8 +36,21 @@ export default {
 #home::after {
   content: "";
   position: absolute;
-  background: rgba(0, 0, 0, 0.01);
-  /* background: var(--primary); */
+  /* background: rgba(0, 0, 0, 0.01); */
+  background: url(/media/pat-2.webp);
+  top: 0;
+  left: 0;
+  z-index: -2;
+  display: block;
+  width: 98vw;
+  height: 32rem;
+  border-bottom-left-radius: 50% 4%;
+  border-bottom-right-radius: 50% 4%;
+}
+#home::before {
+  content: "";
+  position: absolute;
+  /* background: rgba(222, 233, 240, 0.8); */
   top: 0;
   left: 0;
   z-index: -1;
