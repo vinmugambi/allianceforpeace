@@ -65,7 +65,7 @@ header::after {
   display: block;
   position: absolute;
   top: 0px;
-  width: 99vw;
+  width: 98vw;
   height: 16rem;
   background: rgba(0, 0, 0, 0.01);
   z-index: -3;

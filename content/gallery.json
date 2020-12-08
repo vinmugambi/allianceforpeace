@@ -2,13 +2,13 @@
   "title": "Gallery",
   "name": "gallery",
   "images": [
-    { "title": "", "location": "/gallery/images/aid.jpg" },
-    { "title": "", "location": "/gallery/images/aid-1.jpg" },
-    { "title": "", "location": "/gallery/images/aid-2.jpg" },
-    { "title": "", "location": "/programs/covid19-emergency-appeal/1.jpg" },
-    { "title": "", "location": "/programs/covid19-emergency-appeal/2.jpg" },
-    { "title": "", "location": "/programs/frampa/1.jpg" },
-    { "title": "", "location": "/programs/zero-interest-loans/1.jpg" }
+    { "title": "", "location": "/media/aid.jpg" },
+    { "title": "", "location": "/media/aid-1.jpg" },
+    { "title": "", "location": "/media/aid-2.jpg" },
+    { "title": "", "location": "/media/covid19-emergency-appeal-1.jpg" },
+    { "title": "", "location": "/media/covid19-emergency-appeal.jpg" },
+    { "title": "", "location": "/media/frampa.jpg" },
+    { "title": "", "location": "/media/zero-interest-loans.jpg" }
   ],
   "videos": [
     {

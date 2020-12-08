@@ -68,7 +68,7 @@ img.icon::after {
   top: 20%;
   left: 1vw;
   width: 96vw;
-  height: 80%;
+  height: 85%;
   background: rgba(0, 0, 0, 0.01);
   z-index: -3;
   border-top-left-radius: 50% 4%;

@@ -2,7 +2,7 @@
   <div>
     <navbar class="navbar" />
     <Nuxt keep-alive/>
-    <footer class="mt-8 flex justify-center items-center h-12">
+    <footer class="mt-8 flex justify-center items-center h-12 shadow-inner">
       <p class="text-sm">© Global Alliance for Peace 2020</p>
     </footer>
   </div>
@@ -15,11 +15,7 @@
 .container {
   @apply max-w-4xl mx-auto px-4;
 }
-.navbar {
-  background: rgba(0, 0, 0, 0.01);
-}
 footer {
-  background: rgba(0, 0, 0, 0.1);
   color: rgba(0,0,0,.6);
 }
 h1,
@@ -28,14 +24,10 @@ h3,
 h4,
 a,
 nav {
-  font-family: "ScalaSans","Ubuntu", serif;
-  /* @apply font-bold; */
-}
-h1{
-  @apply text-5xl;
+  font-family: sans-serif;
 }
 h1.intro {
-  @apply capitalize text-4xl;
+  @apply capitalize text-4xl font-bold;
 }
 h1 + p {
   @apply text-lg;
@@ -45,7 +37,7 @@ h2 {
   @apply text-2xl;
 }
 
-section h2 {
+section h2, h1 {
   @apply font-bold text-5xl;
 }
 .page h2 {

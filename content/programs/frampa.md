@@ -3,7 +3,7 @@ title: FRAMPA
 description: Farmer, Refugee, Asylum seeker & Migrant Partnerships Australia
 location: NewCastle, Australia
 images: 
- - /programs/frampa/1.jpg
+ - /media/frampa.jpg
 ---
 
 FRAMPA is one of the programs initiated and administered by GAP. It aims to develop partnerships with the Australian rural community to assist African migrants and refugees to find employment and accommodation. Through various means, rural communities which can potentially offer employment, short or long term, and accommodation, are contacted and arrangements are made for the refugees and migrants to take up the offers. Various community organisations such as The Salvation Army, St Vincent de Paul and Rural Australia for Refugees (RAR) have also been contacted to assist in this program.

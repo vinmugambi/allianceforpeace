@@ -42,7 +42,7 @@ export default {
   left: 0;
   z-index: -1;
   display: block;
-  width: 99vw;
+  width: 98vw;
   height: 32rem;
   border-bottom-left-radius: 50% 4%;
   border-bottom-right-radius: 50% 4%;

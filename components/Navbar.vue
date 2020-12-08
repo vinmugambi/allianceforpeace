@@ -1,14 +1,14 @@
 <template>
-  <div id="navbar">
+  <div class="shadow">
     <nav class="flex justify-between container items-center">
       <nuxt-link to="/">
-        <img src="/logo.png" alt="G.A.P" class="block h-16" />
+        <img src="/media/logo.png" alt="G.A.P" class="block h-16" />
       </nuxt-link>
       <ul id="nav-menu" class="flex">
         <li
           v-for="page in navLinks"
           :key="page.title"
-          class="hover:text-blue-600"
+          class="text-gray-700 hover:text-blue-600"
         >
           <nuxt-link
             class="block py-2 px-4 uppercase font-bold"
@@ -50,9 +50,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss">
-#navbar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-</style>
