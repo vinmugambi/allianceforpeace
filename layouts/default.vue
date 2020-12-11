@@ -2,7 +2,7 @@
   <div>
     <navbar class="navbar" />
     <Nuxt keep-alive/>
-    <footer class="mt-8 flex justify-center items-center h-12 shadow-inner">
+    <footer class="mt-16 flex justify-center items-center h-12 shadow-inner">
       <p class="text-sm">© Global Alliance for Peace 2020</p>
     </footer>
   </div>

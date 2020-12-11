@@ -37,7 +37,8 @@ export default {
   content: "";
   position: absolute;
   /* background: rgba(0, 0, 0, 0.01); */
-  background: url(/media/pat-2.webp);
+  background: url(/media/bg.jpg) no-repeat;
+  background-size: cover;
   top: 0;
   left: 0;
   z-index: -2;
