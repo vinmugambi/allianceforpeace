@@ -4,6 +4,8 @@ name: index
 description: Campaigning for peace and for the rights of Africans refugees affected by war.
 ---
 
+<what-we-do></what-we-do>
+
 <section>
 
 ## Programs
@@ -13,4 +15,3 @@ description: Campaigning for peace and for the rights of Africans refugees affec
 [See all programs](/programs)
 
 </section>
-<what-we-do></what-we-do>

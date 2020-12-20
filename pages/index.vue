@@ -1,19 +1,26 @@
 <template>
   <div>
-    <header id="home" class="relative">
-      <div class="container">
-        <h1 class="intro max-w-xl py-12 mx-auto text-center font-bold">
-          {{ home.description }}
-        </h1>
-        <div id="gallery">
-          <home-carousel :images="images" />
-
-          <nuxt-link class="list" to="gallery">see all media</nuxt-link>
+    <header
+      class="grid grid-cols-1 md:grid-cols-7 gap-4 md:auto-cols-min pt-2"
+      style="background: linear-gradient(180deg, #ffffff 0%, #f1f6f8 100%)"
+    >
+      <div class="px-16 md:-mt-8 col-span-3 leading-tight flex items-center">
+        <div class="px-4">
+          <div class="py-4">
+            <img class="block h-16" src="/media/logo.png" alt="Logo" />
+            <div class="py-2 font-serif">Care | Support | Growth</div>
+          </div>
+          <h1 class="text-4xl">
+            {{ home.description }}
+          </h1>
         </div>
       </div>
+      <div class="col-span-4">
+        <home-carousel :images="images" />
+      </div>
     </header>
-    <div id="home-content" class="relative">
-      <nuxt-content class="container" :document="home" />
+    <div id="home-content" class="px-32 relative" >
+      <nuxt-content :document="home" />
     </div>
   </div>
 </template>
@@ -21,7 +28,7 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const home = await $content("pages","home").fetch();
+    const home = await $content("pages", "home").fetch();
     const gallery = await $content("gallery").fetch();
 
     return {
@@ -33,45 +40,19 @@ export default {
 </script>
 
 <style lang="postcss">
-#home::after {
+#home-content::before {
   content: "";
-  position: absolute;
-  /* background: rgba(0, 0, 0, 0.01); */
-  background: url(/media/bg.jpg) no-repeat;
-  background-size: cover;
-  top: 0;
-  left: 0;
-  z-index: -2;
   display: block;
-  width: 98vw;
-  height: 32rem;
-  border-bottom-left-radius: 50% 4%;
-  border-bottom-right-radius: 50% 4%;
+  position: absolute;
+  top: 0%;
+  left: 5vw;
+  width: 90vw;
+  height: 2%;
+  background: linear-gradient(to bottom,rgba(39, 76, 87, 0.08),rgba(160, 192, 204, 0.1));
+  z-index: -3;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
 }
-#home::before {
-  content: "";
-  position: absolute;
-  /* background: rgba(222, 233, 240, 0.8); */
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 98vw;
-  height: 32rem;
-  border-bottom-left-radius: 50% 4%;
-  border-bottom-right-radius: 50% 4%;
-}
-/* #home::before {
-  content: "";
-  position: absolute;
-  background: rgba(0, 0, 0, 0.05);
-  top: 0;
-  left: 0;
-  z-index: -2;
-  display: block;
-  width: 99vw;
-  height: 80vh;
-} */
 </style>
 
 

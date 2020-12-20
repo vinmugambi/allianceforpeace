@@ -1,16 +1,19 @@
 <template>
-  <div class="pb-4">
+  <div>
     <img
       v-if="images.length === 1"
-      class="h-108 w-full object-cover rounded-sm"
+      class="h-108 w-full object-cover"
       :src="images[0].location"
     />
     <div v-else class="flex flex-col">
       <div class="w-full overflow-hidden relative">
-        <img
-          class="h-96 md:h-120 w-full object-cover rounded"
-          :src="images[currentImageIndex].location"
-        />
+        <div v-for="(image, index) in images" :key="image.location">
+          <img
+            v-if="index === currentImageIndex"
+            class="h-128 w-full object-cover"
+            :src="image.location"
+          />
+        </div>
         <div
           class="absolute top-0 left-0 bottom-auto right-auto h-full flex items-center z-10"
         >
@@ -62,9 +65,9 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
+    setInterval(() => {
       this.next();
-    }, 2000);
+    }, 5000);
   },
 
   methods: {
@@ -81,3 +84,16 @@ export default {
   },
 };
 </script>
+<style lang="postcss" scoped>
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+img {
+  animation: 2s fadein;
+}
+</style>

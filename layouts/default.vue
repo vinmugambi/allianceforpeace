@@ -15,20 +15,6 @@
 .container {
   @apply max-w-4xl mx-auto px-4;
 }
-footer {
-  color: rgba(0,0,0,.6);
-}
-h1,
-h2,
-h3,
-h4,
-a,
-nav {
-  font-family: sans-serif;
-}
-h1.intro {
-  @apply capitalize text-4xl font-bold;
-}
 h1 + p {
   @apply text-lg;
 }
@@ -38,7 +24,7 @@ h2 {
 }
 
 section h2, h1 {
-  @apply font-bold text-5xl;
+  @apply text-5xl;
 }
 .page h2 {
   @apply pb-2;

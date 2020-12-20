@@ -1,13 +1,13 @@
 <template>
-  <section id="what-we-do">
-    <div class="title">
+  <section id="what-we-do" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="title col-span-2 pb-8 text-center">
       <h2>What we do</h2>
-      <p>
+      <p class="mx-auto">
         We have developed community programs aimed at helping the most
         vulnerable to rebuild and strengthen their lives
       </p>
     </div>
-    <div v-for="activity in activities" class="activity" :key="activity.title">
+    <div v-for="activity in activities" class="activity pb-6" :key="activity.title">
       <div class="pb-1 space-y-1">
         <img class="relative block rounded-xs icon w-8 h-8" :src="activity.icon" />
         <h3 class="font-bold">
@@ -41,16 +41,6 @@ export default {
 img.icon {
   background: var(--primary);
 }
-img.icon::after {
-  content: "hellko";
-}
-
-#what-we-do {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-}
 #what-we-do h3 {
   @apply text-lg;
 }
@@ -58,20 +48,5 @@ img.icon::after {
 #what-we-do h2 + p {
   @apply text-gray-900;
 }
-#what-we-do .activity:nth-child(2n) {
-  transform: translateY(5.5rem);
-}
-#home-content::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 20%;
-  left: 1vw;
-  width: 96vw;
-  height: 85%;
-  background: rgba(0, 0, 0, 0.01);
-  z-index: -3;
-  border-top-left-radius: 50% 4%;
-  border-top-right-radius: 50% 4%;
-}
+
 </style>
