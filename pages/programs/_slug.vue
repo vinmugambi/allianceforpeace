@@ -22,7 +22,7 @@ export default {
       .catch((err) => error(404));
 
     const [prev, next] = await $content("programs")
-      .only(["title", "slug"])
+      .only(["title", "slug", "images"])
       .sortBy("createdAt", "asc")
       .surround(params.slug)
       .fetch();

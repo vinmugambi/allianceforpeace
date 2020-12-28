@@ -38,7 +38,11 @@
       </div>
     </header>
 
-    <div v-if="activeTabIndex === 0" id="images" class="container flex space-x-2 py-4">
+    <div
+      v-if="activeTabIndex === 0"
+      id="images"
+      class="container flex space-x-2 py-4"
+    >
       <div class="flex-1 flex-column space-y-2">
         <img
           class="block"
@@ -55,7 +59,6 @@
           :src="image.location"
         />
       </div>
-    
     </div>
     <div v-if="activeTabIndex === 1" class="py-4 container" id="videos">
       <div class="pb-4" v-for="video in videos" :key="video.location">
@@ -122,9 +125,9 @@ export default {
   display: block;
   position: absolute;
   top: 0px;
-  width: 99vw;
+  width: 97vw;
   height: 12rem;
-  background: rgba(0, 0, 0, 0.01);
+  background: linear-gradient(180deg, #fff 0, #f1f6f8 100%);
   z-index: -3;
   border-bottom-right-radius: 8% 40%;
 }

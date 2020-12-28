@@ -7,7 +7,7 @@
     />
     <div v-else class="flex flex-col">
       <div class="w-full overflow-hidden relative">
-        <div v-for="(image, index) in images" :key="image.location">
+        <div v-for="(image, index) in images" :key="image.location" class="bg-gray-100"> 
           <img
             v-if="index === currentImageIndex"
             class="h-128 w-full object-cover"
@@ -67,7 +67,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.next();
-    }, 5000);
+    }, 10000);
   },
 
   methods: {
