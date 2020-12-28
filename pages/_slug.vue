@@ -28,3 +28,17 @@ export default {
   },
 };
 </script>
+<style lang="postcss">
+.page a {
+  @apply text-blue-500;
+}
+.page a:hover {
+  @apply underline;
+}
+h1 {
+  @apply leading-none pb-4;
+}
+h3 {
+  @apply font-bold;
+}
+</style>

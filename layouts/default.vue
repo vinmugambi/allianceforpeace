@@ -40,7 +40,7 @@ section {
   @apply pt-16;
 }
 h3 {
-  @apply text-2xl;
+  @apply text-lg;
 }
 
 h4,

@@ -5,7 +5,6 @@
       :to="{ name: 'programs-slug', params: { slug: prev.slug } }"
       class="flex text-gray-700 items-center hover:underline hover:text-blue-500"
     >
-      
       <div  class="arrow rounded-xs">
         <img
         v-if="prev.images"
