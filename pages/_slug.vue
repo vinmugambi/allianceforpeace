@@ -1,17 +1,16 @@
 <template>
   <div>
-    <header class="h-48 header relative pt-4">
+    <header class="h-48 relative header pt-4">
       <div class="container">
         <back to="index" label="Back to home page" />
-
-        <div class="absolute bottom-0 pb-4">
-          <h1>{{ page.title }}</h1>
-          <p v-if="page.description">{{ page.description }}</p>
-        </div>
       </div>
     </header>
 
     <main class="pt-4 container page pb-16">
+      <div class="-mx-4 px-4 pb-8 -mt-12 rounded-xs bg-white">
+        <h1>{{ page.title }}</h1>
+        <p v-if="page.description">{{ page.description }}</p>
+      </div>
       <nuxt-content :document="page" />
     </main>
   </div>
@@ -35,10 +34,28 @@ export default {
 .page a:hover {
   @apply underline;
 }
-h1 {
-  @apply leading-none pb-4;
+.page h1 {
+  @apply leading-none py-4;
 }
-h3 {
-  @apply font-bold;
+.page h3 {
+  @apply font-bold pt-4 pb-2;
+}
+.page img {
+  @apply block my-4 shadow-lg;
+}
+.page ul li {
+  @apply list-disc;
+}
+.page ol li {
+  @apply list-decimal;
+}
+.page ul,ol {
+  @apply pl-4;
+}
+.page code {
+  @apply bg-gray-200;
+}
+.page p {
+  @apply pb-4;
 }
 </style>

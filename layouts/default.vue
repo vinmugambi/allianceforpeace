@@ -19,12 +19,13 @@ h1 + p {
   @apply text-lg;
 }
 
+
 h2 {
   @apply text-2xl;
 }
 
 section h2, h1 {
-  @apply text-5xl;
+  @apply text-5xl tracking-tighter max-w-4xl;
 }
 .page h2 {
   @apply pb-2;
@@ -66,7 +67,7 @@ a.list:hover {
   text-decoration: underline;
 }
 
-p {
+p, .page ul {
   @apply max-w-2xl;
 }
 

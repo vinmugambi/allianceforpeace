@@ -126,7 +126,7 @@ export default {
   position: absolute;
   top: 0px;
   width: 97vw;
-  height: 12rem;
+  height: 100%;
   background: linear-gradient(180deg, #fff 0, #f1f6f8 100%);
   z-index: -3;
   border-bottom-right-radius: 8% 40%;
