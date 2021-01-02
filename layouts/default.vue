@@ -1,9 +1,13 @@
 <template>
   <div>
     <navbar class="navbar" />
-    <Nuxt keep-alive/>
-    <footer class="mt-16 flex justify-center items-center h-12 shadow-inner">
-      <p class="text-sm">© Global Alliance for Peace 2020</p>
+    <Nuxt keep-alive />
+    <footer class="mt-16 flex justify-between px-16 items-center h-12 shadow-inner">
+      <div class="text-gray-700">
+        <a href="/admin">Members</a> |
+        <nuxt-link to="/contributing">Guide</nuxt-link>
+      </div>
+      <p class="text-sm text-gray-900">© Global Alliance for Peace 2020</p>
     </footer>
   </div>
 </template>
@@ -12,6 +16,9 @@
 :root {
   --primary: #07a6de4e;
 }
+footer a:hover {
+  @apply text-blue-600;
+}
 .container {
   @apply max-w-4xl mx-auto px-4;
 }
@@ -19,12 +26,12 @@ h1 + p {
   @apply text-lg;
 }
 
-
 h2 {
   @apply text-2xl;
 }
 
-section h2, h1 {
+section h2,
+h1 {
   @apply text-5xl tracking-tighter max-w-4xl;
 }
 .page h2 {
@@ -67,7 +74,8 @@ a.list:hover {
   text-decoration: underline;
 }
 
-p, .page ul {
+p,
+.page ul {
   @apply max-w-2xl;
 }
 
