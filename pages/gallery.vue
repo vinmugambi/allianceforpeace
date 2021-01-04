@@ -56,9 +56,13 @@
         <img class="block h-full w-full"  :src="image.location" />
       </nuxt-link>
     </div>
-    <div v-if="activeTabIndex === 1" class="py-4 container" id="videos">
-      <div class="pb-4" v-for="video in videos" :key="video.location">
-        <iframe
+    <div v-if="activeTabIndex === 1" class="max-w-5xl py-4 mx-auto flex" id="videos">
+      <nuxt-link to="/" class="block w-full md:w-1/2 pb-4 px-2 relative" v-for="video in videos" :key="video.location">
+        <div class="absolute inset-0 mb-4 mx-2 flex justify-center items-center text-blue-600 bg-black bg-opacity-0 hover:bg-opacity-25 hover:text-white">
+          <play/>
+        </div>
+        <img :src="video.cover" alt="" class="block">
+        <!-- <iframe
           class=""
           width="560"
           height="315"
@@ -66,14 +70,15 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen="allowfullscreen"
-        ></iframe>
-      </div>
+        ></iframe> -->
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
 import Expand from "~/components/icons/Expand.vue";
+import Play from "~/components/icons/Play.vue";
 export default {
   async asyncData({ $content, params, error }) {
     const gallery = await $content("gallery").fetch();
@@ -82,9 +87,14 @@ export default {
       return { ...item, slug: item.title.replace(/ /g, "-") };
     });
 
+    let videosList= media.filter((item) => item.type === "video");
+    const videos= videosList.map(video=> {
+      return {...video, cover: `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+    })
+
     return {
       images: media.filter((item) => item.type === "image"),
-      videos: media.filter((item) => item.type === "video"),
+      videos,
     };
   },
   data() {

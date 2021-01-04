@@ -23,17 +23,17 @@
     },
     {
       "type": "video",
-      "cover": "",
       "title": "meeting",
       "host": "youtube",
-      "location": "https://www.youtube.com/embed/Jt51QmnQ8hE"
+      "location": "https://www.youtube.com/embed/Jt51QmnQ8hE",
+      "id": "Jt51QmnQ8hE"
     },
     {
       "type": "video",
-      "cover": "",
       "title": "meeting two",
       "host": "youtube",
-      "location": "https://www.youtube.com/embed/PajKCEvPCXg"
+      "location": "https://www.youtube.com/embed/PajKCEvPCXg",
+      "id": "PajKCEvPCXg"
     }
   ]
 }
