@@ -1,23 +1,37 @@
 {
   "title": "Gallery",
   "name": "gallery",
-  "images": [
-    { "title": "", "location": "/media/aid.jpg" },
-    { "title": "", "location": "/media/aid-1.jpg" },
-    { "title": "", "location": "/media/aid-2.jpg" },
-    { "title": "", "location": "/media/covid19-emergency-appeal-1.jpg" },
-    { "title": "", "location": "/media/covid19-emergency-appeal.jpg" },
-    { "title": "", "location": "/media/frampa.jpg" },
-    { "title": "", "location": "/media/zero-interest-loans.jpg" }
-  ],
-  "videos": [
+  "media": [
+    { "type": "image", "title": "aid one", "location": "/media/aid-1.jpg" },
+    { "type": "image", "title": "aid two", "location": "/media/aid-2.jpg" },
+    { "type": "image", "title": "aid", "location": "/media/aid.jpg" },
     {
-      "title": "",
+      "type": "image",
+      "title": "covid19 emergency appeal one",
+      "location": "/media/covid19-emergency-appeal-1.jpg"
+    },
+    {
+      "type": "image",
+      "title": "covid 19 emergency appeal two",
+      "location": "/media/covid19-emergency-appeal.jpg"
+    },
+    { "type": "image", "title": "frampa", "location": "/media/frampa.jpg" },
+    {
+      "type": "image",
+      "title": "zero interest loans",
+      "location": "/media/zero-interest-loans.jpg"
+    },
+    {
+      "type": "video",
+      "cover": "",
+      "title": "meeting",
       "host": "youtube",
       "location": "https://www.youtube.com/embed/Jt51QmnQ8hE"
     },
     {
-      "title": "",
+      "type": "video",
+      "cover": "",
+      "title": "meeting two",
       "host": "youtube",
       "location": "https://www.youtube.com/embed/PajKCEvPCXg"
     }

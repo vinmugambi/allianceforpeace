@@ -1,8 +1,10 @@
 <template>
   <div>
     <header class="h-48 header relative pt-4">
-      <div class="container">
+      <div class="max-w-5xl mx-auto">
         <back to="index" label="Back to home page" />
+
+        <nuxt-child />
 
         <div class="absolute bottom-0">
           <h1>Gallery</h1>
@@ -41,23 +43,17 @@
     <div
       v-if="activeTabIndex === 0"
       id="images"
-      class="container flex space-x-2 py-4"
+      class="max-w-5xl mx-auto flex space-x-2 py-4"
     >
-      <div class="flex-1 flex-column space-y-2">
-        <img
+      <div>
+        <nuxt-link
           class="block"
-          v-for="image in firstCol"
+          v-for="image in images"
           :key="image.location"
-          :src="image.location"
-        />
-      </div>
-      <div class="flex-1 space-y-2">
-        <img
-          class="block"
-          v-for="image in secondCol"
-          :key="image.location"
-          :src="image.location"
-        />
+          :to="{name: 'gallery-slug', params: {slug: image.slug}}"
+        >
+          <img :src="image.location" />
+        </nuxt-link>
       </div>
     </div>
     <div v-if="activeTabIndex === 1" class="py-4 container" id="videos">
@@ -81,22 +77,13 @@ export default {
   async asyncData({ $content, params, error }) {
     const gallery = await $content("gallery").fetch();
 
-    let firstCol = [];
-    let secondCol = [];
-
-    const images = gallery.images.forEach((element, index) => {
-      if (index % 2 === 0) {
-        firstCol.push(element);
-      } else {
-        secondCol.push(element);
-      }
+    const media = gallery.media.map((item) => {
+      return { ...item, slug: item.title.replace(/ /g, "-") };
     });
 
     return {
-      images: gallery.images,
-      videos: gallery.videos,
-      firstCol,
-      secondCol,
+      images: media.filter((item) => item.type === "image"),
+      videos: media.filter((item) => item.type === "video"),
     };
   },
   data() {

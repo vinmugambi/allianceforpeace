@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="h-48 relative pt-4">
-      <div class="container">
+      <div class="max-w-5xl mx-auto">
         <back to="index" label="Back to home page" />
 
         <div class="absolute bottom-0 pb-4">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </header>
-    <main class="container">
+    <main class="max-w-5xl mx-auto">
       <ul class="flex flex-wrap -mx-2">
         <li
           v-for="program in programs"
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-header{
+header {
   border-bottom-right-radius: 10% 30%;
 }
 header::after {

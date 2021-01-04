@@ -33,7 +33,7 @@ export default {
 
     return {
       home,
-      images: gallery.images,
+      images: gallery.media.filter(item=>item.type==="image"),
     };
   },
 };
