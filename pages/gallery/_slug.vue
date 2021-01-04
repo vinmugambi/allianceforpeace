@@ -29,8 +29,8 @@
           :to="{ name: 'gallery-slug', params: { slug: next } }"
           class="absolute flex items-center justify-center left-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-100"
         >
-          <left-chev/>
-          </nuxt-link>
+          <left-chev />
+        </nuxt-link>
         <img
           :src="found.location"
           :alt="found.title"
@@ -49,10 +49,11 @@ import RightChev from "~/components/icons/RightChev.vue";
 export default {
   async asyncData({ $content, params, error }) {
     const media = await $content("gallery").fetch();
+    const images = media.media.filter((item) => item.type === "image");
 
     let found, next, prev;
     if (params.slug) {
-      found = media.media.find(
+      found = images.find(
         (item) => item.title == params.slug.replace(/-/g, " ")
       );
     } else return { found: "index" };
@@ -64,16 +65,16 @@ export default {
     if (!found) {
       return { found: "error" };
     } else {
-      let foundIndex = media.media.findIndex((item) => item === found);
-      if (foundIndex === 0) prev = media.media.length - 1;
+      let foundIndex = images.findIndex((item) => item === found);
+      if (foundIndex === 0) prev = images.length - 1;
       else prev = foundIndex - 1;
-      if (foundIndex === media.media.length - 1) next = 0;
+      if (foundIndex === images.length - 1) next = 0;
       else next = foundIndex + 1;
 
       return {
         found,
-        prev: slug(media.media[prev].title),
-        next: slug(media.media[next].title),
+        prev: slug(images[prev].title),
+        next: slug(images[next].title),
       };
     }
   },
