@@ -40,21 +40,21 @@
       </div>
     </header>
 
-    <div
-      v-if="activeTabIndex === 0"
-      id="images"
-      class="max-w-5xl mx-auto flex space-x-2 py-4"
-    >
-      <div>
-        <nuxt-link
-          class="block"
-          v-for="image in images"
-          :key="image.location"
-          :to="{name: 'gallery-slug', params: {slug: image.slug}}"
+    <div v-if="activeTabIndex === 0" id="image-grid" class="max-w-5xl py-4 mx-auto md:flex flex-wrap">
+      <nuxt-link
+        title="View larger"
+        class="relative h-48 w-64 p-1"
+        v-for="image in images"
+        :key="image.location"
+        :to="{ name: 'gallery-slug', params: { slug: image.slug } }"
+      >
+        <div
+          class="absolute flex justify-center items-center inset-0 m-1 bg-black bg-opacity-0 hover:bg-opacity-50 text-white text-opacity-0 hover:text-opacity-100"
         >
-          <img :src="image.location" />
-        </nuxt-link>
-      </div>
+          <expand class="scale-150" />
+        </div>
+        <img class="block h-full w-full"  :src="image.location" />
+      </nuxt-link>
     </div>
     <div v-if="activeTabIndex === 1" class="py-4 container" id="videos">
       <div class="pb-4" v-for="video in videos" :key="video.location">
@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import Expand from "~/components/icons/Expand.vue";
 export default {
   async asyncData({ $content, params, error }) {
     const gallery = await $content("gallery").fetch();
@@ -96,7 +97,7 @@ export default {
     setActiveTab(index) {
       this.activeTabIndex = index;
     },
-  },
+  }
 };
 </script>
 
