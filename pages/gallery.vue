@@ -57,7 +57,7 @@
       </nuxt-link>
     </div>
     <div v-if="activeTabIndex === 1" class="max-w-5xl py-4 mx-auto flex" id="videos">
-      <nuxt-link to="/" class="block w-full md:w-1/2 pb-4 px-2 relative" v-for="video in videos" :key="video.location">
+      <nuxt-link :to="{ name: 'gallery-slug', params: { slug: video.slug } }" class="block w-full md:w-1/2 pb-4 px-2 relative" v-for="video in videos" :key="video.location">
         <div class="absolute inset-0 mb-4 mx-2 flex justify-center items-center text-blue-600 bg-black bg-opacity-0 hover:bg-opacity-25 hover:text-white">
           <play/>
         </div>

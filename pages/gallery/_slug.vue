@@ -32,10 +32,23 @@
           <left-chev />
         </nuxt-link>
         <img
+          v-if="found.type === 'image'"
           :src="found.location"
           :alt="found.title"
           class="block h-full w-auto mx-auto"
         />
+        <div class="h-full grid">
+          <iframe
+            v-if="found.type === 'video'"
+            class="block m-auto"
+            width="854"
+            height="480"
+            :src="`https://www.youtube.com/embed/${found.id}`"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -49,11 +62,10 @@ import RightChev from "~/components/icons/RightChev.vue";
 export default {
   async asyncData({ $content, params, error }) {
     const media = await $content("gallery").fetch();
-    const images = media.media.filter((item) => item.type === "image");
 
     let found, next, prev;
     if (params.slug) {
-      found = images.find(
+      found = media.media.find(
         (item) => item.title == params.slug.replace(/-/g, " ")
       );
     } else return { found: "index" };
@@ -65,16 +77,16 @@ export default {
     if (!found) {
       return { found: "error" };
     } else {
-      let foundIndex = images.findIndex((item) => item === found);
-      if (foundIndex === 0) prev = images.length - 1;
+      let foundIndex = media.media.findIndex((item) => item === found);
+      if (foundIndex === 0) prev = media.media.length - 1;
       else prev = foundIndex - 1;
-      if (foundIndex === images.length - 1) next = 0;
+      if (foundIndex === media.media.length - 1) next = 0;
       else next = foundIndex + 1;
 
       return {
         found,
-        prev: slug(images[prev].title),
-        next: slug(images[next].title),
+        prev: slug(media.media[prev].title),
+        next: slug(media.media[next].title),
       };
     }
   },
