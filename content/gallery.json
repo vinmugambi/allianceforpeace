@@ -25,14 +25,12 @@
       "type": "video",
       "title": "meeting",
       "host": "youtube",
-      "location": "https://www.youtube.com/embed/Jt51QmnQ8hE",
       "id": "Jt51QmnQ8hE"
     },
     {
       "type": "video",
       "title": "meeting two",
       "host": "youtube",
-      "location": "https://www.youtube.com/embed/PajKCEvPCXg",
       "id": "PajKCEvPCXg"
     }
   ]

@@ -4,7 +4,7 @@
       <div class="max-w-5xl mx-auto">
         <back to="index" label="Back to home page" />
 
-        <nuxt-child />
+        <nuxt-child :media="media" />
 
         <div class="absolute bottom-0">
           <h1>Gallery</h1>
@@ -40,7 +40,11 @@
       </div>
     </header>
 
-    <div v-if="activeTabIndex === 0" id="image-grid" class="max-w-5xl py-4 mx-auto md:flex flex-wrap">
+    <div
+      v-if="activeTabIndex === 0"
+      id="image-grid"
+      class="max-w-5xl py-4 mx-auto md:flex flex-wrap"
+    >
       <nuxt-link
         title="View larger"
         class="relative h-48 w-64 p-1"
@@ -53,24 +57,26 @@
         >
           <expand class="scale-150" />
         </div>
-        <img class="block h-full w-full"  :src="image.location" />
+        <img class="block h-full w-full" :src="image.location" />
       </nuxt-link>
     </div>
-    <div v-if="activeTabIndex === 1" class="max-w-5xl py-4 mx-auto flex" id="videos">
-      <nuxt-link :to="{ name: 'gallery-slug', params: { slug: video.slug } }" class="block w-full md:w-1/2 pb-4 px-2 relative" v-for="video in videos" :key="video.location">
-        <div class="absolute inset-0 mb-4 mx-2 flex justify-center items-center text-blue-600 bg-black bg-opacity-0 hover:bg-opacity-25 hover:text-white">
-          <play/>
+    <div
+      v-if="activeTabIndex === 1"
+      class="max-w-5xl py-4 mx-auto flex"
+      id="videos"
+    >
+      <nuxt-link
+        :to="{ name: 'gallery-slug', params: { slug: video.slug } }"
+        class="block w-full md:w-1/2 pb-4 px-2 relative"
+        v-for="video in videos"
+        :key="video.location"
+      >
+        <div
+          class="absolute inset-0 mb-4 mx-2 flex justify-center items-center text-blue-600 bg-black bg-opacity-0 hover:bg-opacity-25 hover:text-white"
+        >
+          <play />
         </div>
-        <img :src="video.cover" alt="" class="block">
-        <!-- <iframe
-          class=""
-          width="560"
-          height="315"
-          :src="video.location"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen="allowfullscreen"
-        ></iframe> -->
+        <img :src="video.cover" alt="" class="block" />
       </nuxt-link>
     </div>
   </div>
@@ -84,17 +90,19 @@ export default {
     const gallery = await $content("gallery").fetch();
 
     const media = gallery.media.map((item) => {
+      if (item.type === "video") {
+        item = {
+          ...item,
+          cover: `https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`,
+        };
+      }
       return { ...item, slug: item.title.replace(/ /g, "-") };
     });
 
-    let videosList= media.filter((item) => item.type === "video");
-    const videos= videosList.map(video=> {
-      return {...video, cover: `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-    })
-
     return {
       images: media.filter((item) => item.type === "image"),
-      videos,
+      videos: media.filter((item) => item.type === "video"),
+      media
     };
   },
   data() {
@@ -107,7 +115,7 @@ export default {
     setActiveTab(index) {
       this.activeTabIndex = index;
     },
-  }
+  },
 };
 </script>
 

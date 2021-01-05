@@ -1,8 +1,9 @@
 <template>
   <div
-    v-if="found !== 'index'"
+    v-if="found"
     class="fixed py-4 z-20 bg-gray-700 bg-opacity-25 inset-0 h-screen w-screen"
   >
+    {{ finded }}
     <div
       class="flex flex-col w-5/6 h-full mx-auto rounded bg-gray-100 shadow-xl"
     >
@@ -19,14 +20,14 @@
       <div class="bg-gray-300 h-148 rounded relative">
         <nuxt-link
           title="Next image"
-          :to="{ name: 'gallery-slug', params: { slug: prev } }"
+          :to="{ name: 'gallery-slug', params: { slug: sorround.next } }"
           class="absolute flex items-center justify-center right-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-100"
         >
           <right-chev />
         </nuxt-link>
         <nuxt-link
           title="Previous image"
-          :to="{ name: 'gallery-slug', params: { slug: next } }"
+          :to="{ name: 'gallery-slug', params: { slug: sorround.prev } }"
           class="absolute flex items-center justify-center left-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-100"
         >
           <left-chev />
@@ -60,35 +61,31 @@ import LeftChev from "~/components/icons/LeftChev.vue";
 import RightChev from "~/components/icons/RightChev.vue";
 
 export default {
-  async asyncData({ $content, params, error }) {
-    const media = await $content("gallery").fetch();
+  props: ["media"],
+  computed: {
+    found() {
+      if (!this.$route.params.slug) return false;
+      else {
+        return this.media.find(
+          (item) => item.title == this.$route.params.slug.replace(/-/g, " ")
+        );
+      }
+    },
+    sorround() {
+      if (this.found) {
+        let prev, next;
+        let foundIndex = this.media.findIndex((item) => item === this.found);
+        if (foundIndex === 0) prev = this.media.length - 1;
+        else prev = foundIndex - 1;
+        if (foundIndex === this.media.length - 1) next = 0;
+        else next = foundIndex + 1;
 
-    let found, next, prev;
-    if (params.slug) {
-      found = media.media.find(
-        (item) => item.title == params.slug.replace(/-/g, " ")
-      );
-    } else return { found: "index" };
-
-    function slug(url) {
-      return url.replace(/ /g, "-");
-    }
-
-    if (!found) {
-      return { found: "error" };
-    } else {
-      let foundIndex = media.media.findIndex((item) => item === found);
-      if (foundIndex === 0) prev = media.media.length - 1;
-      else prev = foundIndex - 1;
-      if (foundIndex === media.media.length - 1) next = 0;
-      else next = foundIndex + 1;
-
-      return {
-        found,
-        prev: slug(media.media[prev].title),
-        next: slug(media.media[next].title),
-      };
-    }
+        return {
+          prev: this.media[prev].slug,
+          next: this.media[next].slug,
+        };
+      }
+    },
   },
 };
 </script>
