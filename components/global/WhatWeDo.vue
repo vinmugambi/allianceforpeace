@@ -1,8 +1,8 @@
 <template>
-  <section id="what-we-do" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="title col-span-2 pb-8 text-center">
+  <section id="what-we-do" class="grid grid-cols-2 gap-4">
+    <div class="title col-span-2 pb-8 md:text-center">
       <h2 class="mx-auto">What we do</h2>
-      <p class="mx-auto">
+      <p class="md:mx-auto">
         We have developed community programs aimed at helping the most
         vulnerable to rebuild and strengthen their lives
       </p>

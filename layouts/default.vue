@@ -1,8 +1,8 @@
 <template>
   <div>
-    <navbar class="navbar" />
+    <navbar />
     <Nuxt keep-alive />
-    <footer class="mt-16 flex justify-between px-16 items-center h-12 shadow-inner">
+    <footer class="mt-16 flex justify-between px-4 md:px-16 items-center h-12 shadow-inner">
       <div class="text-gray-700">
         <a href="/admin">Members</a> |
         <nuxt-link to="/contributing">Guide</nuxt-link>
@@ -60,11 +60,6 @@ ul + p a,
 a.list {
   @apply text-blue-600 font-bold;
   display: inline-block;
-  padding-right: 1.4rem;
-  background-image: url(/icons/chev-right.svg);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 1rem 1rem;
   text-transform: uppercase;
 }
 

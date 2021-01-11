@@ -1,6 +1,6 @@
 <template>
-  <ul class="flex space-x-8 py-4">
-    <li v-for="program in programs" :key="program.title" class="flex-1">
+  <ul class="flex flex-col sm:flex-row sm:space-x-8 pt-4 sm:pb-4">
+    <li v-for="program in programs" :key="program.title" class="w-full sm:w-1/2 lg:w-1/3 pb-6 rounded overflow-hidden">
       <nuxt-link
         :to="{ name: 'programs-slug', params: { slug: program.slug } }"
         class="block relative overflow-hidden preview"

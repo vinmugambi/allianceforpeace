@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="h-48 header relative pt-4">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-5xl mx-auto px-4 sm:px-16 lg:px-4">
         <back to="index" label="Back to home page" />
 
         <nuxt-child :media="media" />
@@ -43,7 +43,7 @@
     <div
       v-if="activeTabIndex === 0"
       id="image-grid"
-      class="max-w-5xl py-4 mx-auto md:flex flex-wrap"
+      class="max-w-5xl mx-auto px-4 sm:px-16 lg:px-4 py-4 mx-auto md:flex flex-wrap"
     >
       <nuxt-link
         title="View larger"
@@ -62,7 +62,7 @@
     </div>
     <div
       v-if="activeTabIndex === 1"
-      class="max-w-5xl py-4 mx-auto flex"
+      class="max-w-5xl mx-auto px-4 sm:px-16 lg:px-4 py-4 mx-auto md:flex flex-wrap"
       id="videos"
     >
       <nuxt-link

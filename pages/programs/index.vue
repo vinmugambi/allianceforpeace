@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="h-48 relative pt-4">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-5xl mx-auto px-4 sm:px-16 lg:px-4">
         <back to="index" label="Back to home page" />
 
         <div class="absolute bottom-0 pb-4">
@@ -10,12 +10,12 @@
         </div>
       </div>
     </header>
-    <main class="max-w-5xl mx-auto">
-      <ul class="flex flex-wrap -mx-2">
+    <main class="max-w-5xl  mx-auto px-4 sm:px-16 lg:px-4">
+      <ul class="flex flex-col sm:flex-row sm:flex-wrap sm:-mx-2">
         <li
           v-for="program in programs"
           :key="program.slug"
-          class="w-1/3 px-2 py-4"
+          class="w-full sm:w-1/2 lg:w-1/3 sm:px-2 py-4"
         >
           <nuxt-link
             :to="`/programs/${program.slug}`"
