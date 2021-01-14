@@ -1,7 +1,11 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
-
+  generate: {
+    exclude: [
+      /^\/admin/ // path starts with /admin
+    ]
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: "Global Alliance for Peace",
