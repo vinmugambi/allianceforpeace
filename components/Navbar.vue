@@ -24,7 +24,7 @@
         class="inset-0 h-full w-full z-40 fixed bg-gray-800 opacity-50 cursor-default"
       ></button>
     </div>
-    <ul class="hidden sm:flex -ml-16">
+    <ul class="hidden sm:flex" :class="{'-ml-16':notHome}">
       <li
         v-for="page in navLinks"
         :key="page.title"

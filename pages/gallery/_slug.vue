@@ -3,9 +3,8 @@
     v-if="found"
     class="fixed py-4 z-20 bg-gray-700 bg-opacity-25 inset-0 h-screen w-screen"
   >
-    {{ finded }}
     <div
-      class="flex flex-col w-5/6 h-full mx-auto rounded bg-gray-100 shadow-xl"
+      class="flex flex-col w:full md:w-5/6 h-full mr-4 ml-2 sm:mx-auto rounded bg-gray-100 shadow-xl"
     >
       <div class="relative text-center font-bold">
         <nuxt-link
@@ -17,18 +16,18 @@
         </nuxt-link>
         {{ found.title }}
       </div>
-      <div class="bg-gray-300 h-148 rounded relative">
+      <div class="bg-white sm:h-148 rounded relative">
         <nuxt-link
           title="Next image"
           :to="{ name: 'gallery-slug', params: { slug: sorround.next } }"
-          class="absolute flex items-center justify-center right-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-100"
+          class="absolute flex items-center justify-center right-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-75"
         >
           <right-chev />
         </nuxt-link>
         <nuxt-link
           title="Previous image"
           :to="{ name: 'gallery-slug', params: { slug: sorround.prev } }"
-          class="absolute flex items-center justify-center left-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-100"
+          class="absolute flex items-center justify-center left-0 h-full w-12 top-0 z-30 bg-gray-200 bg-opacity-25 hover:bg-opacity-75"
         >
           <left-chev />
         </nuxt-link>
@@ -36,9 +35,9 @@
           v-if="found.type === 'image'"
           :src="found.location"
           :alt="found.title"
-          class="block h-full w-auto mx-auto"
+          class="block w-full h-auto sm:h-full sm:w-auto mx-auto object-cover"
         />
-        <div class="h-full grid">
+        <div style="--aspect-ratio: 16/9">
           <iframe
             v-if="found.type === 'video'"
             class="block m-auto"
@@ -89,3 +88,42 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+@supports (--custom: property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+</style>
