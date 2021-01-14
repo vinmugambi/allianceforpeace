@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="h-48 relative pt-4">
+    <header class="h-48 relative pt-4 z-10">
       <div class="max-w-5xl mx-auto px-4 sm:px-16 lg:px-4">
         <back to="index" label="Back to home page" />
 
