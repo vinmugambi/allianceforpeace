@@ -90,20 +90,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.video-wrap {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
-  height: 0;
-  overflow: hidden;
-}
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 [style*="--aspect-ratio"] > :first-child {
   width: 100%;
 }
