@@ -52,19 +52,14 @@ collections:
         file: "content/gallery.json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - label: Images
-            name: images
+          - label: Media (image or video)
+            name: media
             widget: list
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: Location, name: "location", widget: "string" }
-          - label: Videos
-            name: videos
-            widget: list
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Location", name: "location", widget: "string" }
-              - { label: "Host", name: "host", widget: "string" }
+              - { label: Location, name: "location", widget:"string" }
+              - { label: Type, name: "type" , widget: "select",options: ["image", "video"]}
+              - { label: id, name: "id", widget: "string" }
       - name: "what-we-do"
         label: "What we do"
         file: "content/what-we-do.json"
