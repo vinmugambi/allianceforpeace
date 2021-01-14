@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <header>
+    <header class="pb-8">
       <back to="programs" class="my-2" label="Back to all programs" />
       <carousel v-if="program.images" :images="program.images" />
-      <h1>{{ program.title }}</h1>
+      <h1 class="pt-4 leading-none">{{ program.title }}</h1>
       <p v-if="program.description">{{ program.description }}</p>
     </header>
 

@@ -66,7 +66,7 @@ We have disabled ability to add text files other than _Programs_. However, If yo
 
 ### Editing  a text file
 
-To edit, for example a _Page_ type. 
+To edit, for example a _Page_ type.
 
 1. Click _Pages_ on the side menu.
 2. On the middle panel, find the title of the page you want to edit and click on it.
@@ -98,24 +98,35 @@ The home page holds with the content we want our visitors to see first. In this 
 
 ## Images
 
-For an image to appear on the website, it must be uploaded. To upload an image find the media button on the top navbar menu and click on it. On the floating window that appears, find the upload button and select the file and upload appropriately.
+For an image to appear on the website, it must either be uploaded or a link to its location provided. To upload an image find the media button on the top navbar menu and click on it. On the floating window that appears, find the upload button and select the file and upload appropriately.
 
 ![upload a file](/media/upload.png)
 
-### Make an image appear on the gallery page and the slider in home page.
+### Make an image appear on the gallery page
 
 1. Click on Settings in the side menu.
 2. Find _Gallery_ in the centre section and click on it.
-3. Find the add `Add images` button, click on it and croll down to see the form for adding an image.
-4. Enter the image link location and save. 
+3. Find the add `Add media (image or video) +` button and click on it.
+4. Fill all the fields except ID which is not required.
 
 <alert>
 
-If you uploaded the image, the image link location should be in the format /media/name_of_the_image_file.ext since the files are uploaded to the media folder. Click on any of the already added image to see format.
+If you uploaded an image named `food-aid.jpg`, the image link location would be `/media/food-aid.jpg`.
 
 </alert>
 
-Use the same process while adding a video to the gallery page.
+### Make an video appear on the gallery page
+
+This websites supports only videos that have already been uploaded to YouTube.
+
+The procedure for adding a video is similar to that of adding an image described above. However, you must provide the YouTube video id and location is not required.
+
+<alert>
+
+A youtube video id is the string of characters that come after `v=` in the video url when viewing YouTube on a browser.
+
+</alert>
+
 
 ## Anything unclear or missing
 

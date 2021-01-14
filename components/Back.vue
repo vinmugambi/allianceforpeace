@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="{ name: to }"
-    class="inline-flex text-gray-800 font-bold py-1 hover:text-blue-500"
+    class="inline-flex text-gray-800 text-sm font-bold py-1 hover:text-blue-500"
   >
     <arrow-left />
     <span class="inline-block pl-2">{{ label }}</span>

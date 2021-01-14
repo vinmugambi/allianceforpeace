@@ -7,10 +7,10 @@
       <button
         type="button"
         @click="menuOpen = true"
-        class="block h-full hover:text-gray-400 focus:outline-none"
+        class="block h-full p-2 hover:text-gray-400 focus:outline-none"
       >
         <svg
-          class="h-8 w-8 fill-current"
+          class="h-6 w-6 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >

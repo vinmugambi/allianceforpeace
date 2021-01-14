@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="found"
-    class="fixed py-4 z-20 bg-gray-700 bg-opacity-25 inset-0 h-screen w-screen"
+    class="fixed pt-2 pb-6 z-20 bg-gray-700 bg-opacity-25 inset-0 h-screen w-screen"
   >
     <div
       class="flex flex-col w:full md:w-5/6 h-full mr-4 ml-2 sm:mx-auto rounded bg-gray-100 shadow-xl"
@@ -16,7 +16,7 @@
         </nuxt-link>
         {{ found.title }}
       </div>
-      <div class="bg-white sm:h-148 rounded relative">
+      <div class="sm:h-148 rounded relative bg-white">
         <nuxt-link
           title="Next image"
           :to="{ name: 'gallery-slug', params: { slug: sorround.next } }"
@@ -37,7 +37,7 @@
           :alt="found.title"
           class="block w-full h-auto sm:h-full sm:w-auto mx-auto object-cover"
         />
-        <div style="--aspect-ratio: 16/9">
+        <div style="--aspect-ratio: 16/9" class="h-full overflow-hidden">
           <iframe
             v-if="found.type === 'video'"
             class="block m-auto"
