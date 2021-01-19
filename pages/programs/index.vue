@@ -10,7 +10,7 @@
         </div>
       </div>
     </header>
-    <main class="max-w-5xl  mx-auto px-4 sm:px-16 lg:px-4">
+    <main class="max-w-5xl mx-auto px-4 sm:px-16 lg:px-4">
       <ul class="flex flex-col sm:flex-row sm:flex-wrap sm:-mx-2">
         <li
           v-for="program in programs"
@@ -51,6 +51,18 @@ export default {
     return {
       page,
       programs,
+    };
+  },
+  head() {
+    return {
+      title: "Programs - Global Alliance for Peace",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.page.description,
+        },
+      ],
     };
   },
 };

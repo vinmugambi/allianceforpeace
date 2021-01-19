@@ -102,7 +102,7 @@ export default {
     return {
       images: media.filter((item) => item.type === "image"),
       videos: media.filter((item) => item.type === "video"),
-      media
+      media,
     };
   },
   data() {
@@ -115,6 +115,16 @@ export default {
     setActiveTab(index) {
       this.activeTabIndex = index;
     },
+  },
+  head: {
+    title: "Images and Videos - Global alliance for Peace",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Media showing operations in regions we operate",
+      },
+    ],
   },
 };
 </script>

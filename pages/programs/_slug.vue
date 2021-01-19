@@ -36,6 +36,18 @@ export default {
     },
     imagesFullPaths(images) {},
   },
+  head() {
+    return {
+      title: `${this.program.title} - Global Alliance for Peace`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.program.description || this.program.title,
+        },
+      ],
+    };
+  },
 };
 </script>
 

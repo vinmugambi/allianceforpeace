@@ -8,20 +8,11 @@ export default {
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "Global Alliance for Peace",
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { name: "viewport", content: "width=device-width, initial-scale=1" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.jpg" }],
-    link: [
-      {
-        rel: "stylesheet",
-        href:
-          "//db.onlinewebfonts.com/c/25a4fec4e6e60457b078baa1b365a48f?family=ScalaSans"
-      }
-    ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     script: [
       { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
     ]

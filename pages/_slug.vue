@@ -25,6 +25,18 @@ export default {
       .catch((err) => error(404, "The page you are looking for is missing"));
     return { page };
   },
+  head() {
+    return {
+      title: `${this.page.title} - Global Alliance for Peace`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.page.description || this.page.title,
+        },
+      ],
+    };
+  },
 };
 </script>
 <style lang="postcss">
@@ -49,7 +61,8 @@ export default {
 .page ol li {
   @apply list-decimal;
 }
-.page ul,ol {
+.page ul,
+ol {
   @apply pl-4;
 }
 .page code {

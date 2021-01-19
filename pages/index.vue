@@ -19,7 +19,7 @@
         <home-carousel :images="images" />
       </div>
     </header>
-    <div id="home-content" class="px-4 md:px-16 lg:px-32 relative" >
+    <div id="home-content" class="px-4 md:px-16 lg:px-32 relative">
       <nuxt-content :document="home" />
     </div>
   </div>
@@ -33,7 +33,19 @@ export default {
 
     return {
       home,
-      images: gallery.media.filter(item=>item.type==="image"),
+      images: gallery.media.filter((item) => item.type === "image"),
+    };
+  },
+  head() {
+    return {
+      title: "Global Alliance for Peace",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.home.description,
+        },
+      ],
     };
   },
 };
@@ -48,7 +60,11 @@ export default {
   left: 5vw;
   width: 90vw;
   height: 2%;
-  background: linear-gradient(to bottom,rgba(39, 76, 87, 0.08),rgba(160, 192, 204, 0.1));
+  background: linear-gradient(
+    to bottom,
+    rgba(39, 76, 87, 0.08),
+    rgba(160, 192, 204, 0.1)
+  );
   z-index: -3;
   border-bottom-right-radius: 50% 50%;
   border-bottom-left-radius: 50% 50%;
